@@ -1,0 +1,46 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin:  47px 25px;
+}
+.title{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.phone{
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 91px;
+    text-align: left;
+
+}
+.address{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: left;
+
+}
+.hours{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: left;
+
+}
+.days{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31px;
+    text-align: left;
+
+}
+.icon{
+    font-size: 68px;
+    margin: 25px;
+}

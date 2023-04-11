@@ -1,0 +1,43 @@
+.wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-align: center;
+
+}
+.block h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0.03em;
+    text-align: left;
+
+}
+.block button{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid  #8B8B8B;
+    color: #8B8B8B;
+    padding: 6px 7.5px;
+    width: 120px;
+    height: 31px;
+    
+
+}
+.block{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+}

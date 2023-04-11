@@ -1,0 +1,22 @@
+.wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-align: center;
+
+}
+.title{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    margin-left: 30px;
+    
+}

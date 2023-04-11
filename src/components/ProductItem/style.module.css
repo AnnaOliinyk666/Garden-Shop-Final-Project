@@ -1,0 +1,45 @@
+.img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.title{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.oldPrice{
+    text-decoration: line-through;
+    color: gray;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    text-align: left;
+
+}
+.newPrice{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: 0.03em;
+    text-align: left;
+
+}
+.percent{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: red;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
