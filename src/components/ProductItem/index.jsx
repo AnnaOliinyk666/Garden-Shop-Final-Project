@@ -7,7 +7,12 @@ export default function ProductItem({price,discont_price,image,title}) {
   return (
     <div className={s.wrapper}>
         <img className={s.img} src={`${URL}${image}`} alt="" />
-        <p className={s.price}> <b className={s.newPrice}>{discont_price}$</b> <span className={s.oldPrice}>{price}$</span> <span className={s.percent}>-{precent}%</span></p>
+        {
+          discont_price !== null
+          ? <p className={s.price}> <b className={s.newPrice}>{discont_price}$</b> <span className={s.oldPrice}>{price}$</span> <span className={s.percent}>-{precent}%</span></p>
+          : <p className={s.price}> <b className={s.newPrice}>{price}$</b></p>
+        }
+        
         <p className={s.title}>{title}</p>
     </div>
   )

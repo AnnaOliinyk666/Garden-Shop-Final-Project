@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { asynkLoadCategoriesAction } from "../../store/asyncAction/category";
 import { asynkLoadProductsAction } from "../../store/asyncAction/products";
+import ErrorPage from "../../pages/ErrorPage";
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/products/all" element={<ProductsPage/>}/>
         <Route path="/categories" element={<CategoriesPage/>}/>
-        <Route path="/product/:id" element={<SinglPoductPage/>}/>
+        <Route path="/products/:id" element={<SinglPoductPage/>}/>
         <Route path="/basket" element={<BasketPage/>}/>
+        <Route path="/*" element={<ErrorPage/>}/>
       </Routes>
       <Footer/>
     </div> 
