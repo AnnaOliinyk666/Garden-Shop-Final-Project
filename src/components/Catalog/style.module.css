@@ -19,7 +19,7 @@
     text-align: left;
 
 }
-.block button{
+.block a{
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
@@ -28,9 +28,9 @@
     background-color: transparent;
     border: 2px solid  #8B8B8B;
     color: #8B8B8B;
-    padding: 6px 7.5px;
+    padding:  7.5px;
     width: 120px;
-    height: 31px;
+    text-decoration: none;
     
 
 }

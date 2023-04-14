@@ -2,6 +2,7 @@
     width: 300px;
     height: 300px;
     object-fit: cover;
+    
 }
 .title{
     font-size: 16px;
@@ -43,3 +44,29 @@
     justify-content: space-between;
     align-items: center;
 }
+.btn{
+    border: none;
+    background-color: transparent;
+    position: relative;
+    bottom: 50px;
+    left: 130px;
+    background-color: #F1FFF1;
+    border-radius: 50%;
+    padding: 5px 5px;
+    
+    
+}
+.btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #339933;
+    
+    cursor: pointer;
+}
+.btn i{
+    color: #339933;
+    font-size: 40px;
+}
+.btn i:hover{
+    color: #F1FFF1;
+}
+

@@ -2,6 +2,7 @@ import React from 'react'
 import CategorieItem from '../CategorieItem'
 import { useSelector } from 'react-redux'
 import s from './style.module.css'
+import { Link } from 'react-router-dom'
 
 export default function Catalog() {
     const categories = useSelector(store => store.categories)
@@ -10,7 +11,7 @@ export default function Catalog() {
     <div>
         <div className={s.block}>
             <h2>Catalog</h2>
-            <button>All categories</button>
+            <Link to='/categories'>All categories</Link>
         </div>
         <div className={s.wrapper}>
             {

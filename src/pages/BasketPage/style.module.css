@@ -1,0 +1,127 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title h2{
+font-size: 40px;
+font-weight: 700;
+line-height: 52px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+.title div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title div a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.order_block{
+    border: 2px solid black;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    border-radius: 21px;
+}
+.order_block h4{
+font-size: 28px;
+font-weight: 600;
+line-height: 36px;
+letter-spacing: 0.03em;
+text-align: left;
+}
+.order_price{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 24px;
+font-weight: 500;
+line-height: 31px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+.order_price div{
+font-size: 32px;
+font-weight: 600;
+line-height: 42px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+.order_price div span{
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 13px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+.order_block form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.order_block input{
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    margin-bottom: 25px;
+    border-radius: 20px;
+
+}
+.order_block button{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: #339933;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+     
+}
+.order_block button:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #4eac4e;
+}
+.clear_btn{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: #339933;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 30%;
+}
+.clear_btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #4eac4e;
+}
