@@ -15,7 +15,7 @@ export default function Catalog() {
         </div>
         <div className={s.wrapper}>
             {
-                categories.map(({id, ...item}) => id===5 ? '' : <CategorieItem key={id} {...item}/>)
+                categories.map((item) => item.id===5 ? '' : <CategorieItem key={item.id} {...item}/>)
             }
         </div>
         

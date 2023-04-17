@@ -3,7 +3,7 @@ const PRODUCTS_SEARCH_FILTER = 'PRODUCTS_SEARCH_FILTER'
 const PRODUCTS_RESET_FILTER = 'PRODUCTS_RESET_FILTER'
 const PRODUCTS_SORT_FILTER = 'PRODUCTS_SORT_FILTER'
 
-const getPrice = ({price,discountPercentage}) => price - price * discountPercentage / 100;
+const getPrice = ({newPrice}) => +newPrice;
 
 export const productsLoadAction = (payload) => ({type: PRODUCTS_LOAD, payload});
 export const productsSearchAction = (payload) => ({type: PRODUCTS_SEARCH_FILTER, payload});
@@ -13,7 +13,13 @@ export const productsSortPriceAction = (payload) => ({type: PRODUCTS_SORT_FILTER
 export const productsReducer = (state=[],action) => {
     if (action.type === PRODUCTS_LOAD) {
         
-        return action.payload.map(item => ({...item, show:true}))
+        return action.payload.map(item => (
+            {
+            ...item, 
+            show:true, 
+            newPrice: item.discont_price ? item.discont_price : item.price
+            }
+            ))
     } else if(action.type === PRODUCTS_SEARCH_FILTER){
         return state.map(item => ({
             ...item,
@@ -26,8 +32,8 @@ export const productsReducer = (state=[],action) => {
         }));
         
     }else if(action.type === PRODUCTS_SORT_FILTER){
-        
-    return [...state].sort((a,b) => (action.payload === 1 ? -1 : 1) * (getPrice(a) - getPrice(b)))
+       
+    return [...state].sort((a,b) => (action.payload === 1 ? 1 : -1) * (getPrice(a) - getPrice(b)))
         
     }
         return state

@@ -10,7 +10,7 @@ export default function CategoriesPage() {
         <h2 className={s.title}>Categories</h2>
         <div className={s.wrapper}>
             {
-                categories.map(({id, ...item}) => <CategorieItem key={id} {...item}/>)
+                categories.map((item) => <CategorieItem key={item.id} {...item}/>)
             }
         </div>
     </div>
