@@ -1,4 +1,5 @@
-import { productsLoadAction } from "../reducer/productsReducer";
+// import { productsLoadAction } from "../reducer/productsReducer";
+import { load } from "../slice/productsSlice";
 
 const productsURL = 'http://localhost:3333/products/all';
 
@@ -7,7 +8,7 @@ export const asynkLoadProductsAction = async (dispatch) => {
     const data = await resp.json();
    
     
-    dispatch(productsLoadAction(data))
+    dispatch(load(data))
     }
 
     

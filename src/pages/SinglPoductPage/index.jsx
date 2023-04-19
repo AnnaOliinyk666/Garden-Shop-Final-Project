@@ -6,8 +6,8 @@ import s from './style.module.css'
 export default function SinglPoductPage() {
   // const dispatch = useDispatch()
   const {id} = useParams()
-  const product = useSelector(({products}) => products.find(prod => prod.id === +id))
-  console.log(product)
+  const product = useSelector(state => state.products.list.find(prod => prod.id === +id))
+  // console.log(product)
   // const precent = (100-product.discont_price / product.price * 100).toFixed(2);
   const URL = 'http://localhost:3333/'
   return (

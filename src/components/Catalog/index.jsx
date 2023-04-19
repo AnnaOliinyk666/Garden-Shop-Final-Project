@@ -5,7 +5,7 @@ import s from './style.module.css'
 import { Link } from 'react-router-dom'
 
 export default function Catalog() {
-    const categories = useSelector(store => store.categories)
+    const categories = useSelector(store => store.categories.list)
     
   return (
     <div>

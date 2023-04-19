@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductItem from '../../components/ProductItem'
 import s from './style.module.css'
 import { useParams } from 'react-router-dom'
-import { productsSortPriceAction } from '../../store/reducer/productsReducer'
+// import { productsSortPriceAction } from '../../store/reducer/productsReducer'
+import { sortFilter } from '../../store/slice/productsSlice'
 
 export default function ProductsPage() {
-  const {products,categories} = useSelector(state => state)
+  const products = useSelector(state => state.products.list)
+  const categories = useSelector(state => state.categories.list)
   const {id,sale} = useParams();
   const prodByCategory = products.filter(item => item.categoryId === +id);
   const prodSale = products.filter(item => item.discont_price)
@@ -20,7 +22,7 @@ export default function ProductsPage() {
 
   const sortOnChange = (e) => {
     
-    dispatch(productsSortPriceAction(+e.target.value))
+    dispatch(sortFilter(+e.target.value))
   }
   
   function title() {

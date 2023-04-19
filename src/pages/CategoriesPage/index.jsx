@@ -4,7 +4,7 @@ import s from './style.module.css'
 import CategorieItem from '../../components/CategorieItem'
 
 export default function CategoriesPage() {
-    const categories = useSelector(store => store.categories)
+    const categories = useSelector(store => store.categories.list)
   return (
     <div>
         <h2 className={s.title}>Categories</h2>

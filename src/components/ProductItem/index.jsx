@@ -1,8 +1,9 @@
 import React from 'react'
 import s from './style.module.css'
 import { useDispatch } from 'react-redux';
-import { basketAddAction } from '../../store/reducer/basketReducer';
+// import { basketAddAction } from '../../store/reducer/basketReducer';
 import { Link } from 'react-router-dom';
+import { basket_add } from '../../store/slice/basketSlice';
 
 export default function ProductItem({id,price,discont_price,image,title}) {
     const precent = (100-discont_price / price * 100).toFixed(2);
@@ -14,7 +15,7 @@ export default function ProductItem({id,price,discont_price,image,title}) {
         <Link to={`/products/${id}`}>
           <img className={s.img} src={`${URL}${image}`} alt="" />
         </Link>
-          <button className={s.btn} onClick={() => dispatch(basketAddAction(id))}><i class="las la-cart-plus"></i></button> 
+          <button className={s.btn} onClick={() => dispatch(basket_add(id))}><i class="las la-cart-plus"></i></button> 
       </div>
         
         {

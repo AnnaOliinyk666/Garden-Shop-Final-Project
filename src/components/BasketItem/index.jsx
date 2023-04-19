@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { basketDecrementAction, basketIncrementAction, basketRemoveAction } from '../../store/reducer/basketReducer';
+// import { basketDecrementAction, basketIncrementAction, basketRemoveAction } from '../../store/reducer/basketReducer';
 import s from './style.module.css'
+import { basket_decrement, basket_increment, basket_remove } from '../../store/slice/basketSlice';
 
 export default function BasketItem({id,title, price, discont_price,image,count}) {
   const dispatch = useDispatch();
@@ -12,9 +13,9 @@ export default function BasketItem({id,title, price, discont_price,image,count})
         <div className={s.name_count_block}>
             <p className={s.title}>{title}</p>
             <div className={s.btnDecr}>
-                <button onClick={()=>dispatch(basketDecrementAction(id))}>-</button>
+                <button onClick={()=>dispatch(basket_decrement(id))}>-</button>
                 <p>{count}</p>
-                <button onClick={()=>dispatch(basketIncrementAction(id))}>+</button>
+                <button onClick={()=>dispatch(basket_increment(id))}>+</button>
             </div>
         </div>
         {
@@ -24,7 +25,7 @@ export default function BasketItem({id,title, price, discont_price,image,count})
           : <p className={s.price}>{price}$</p>
         }
         
-        <button className={s.del_btn} onClick={()=>dispatch(basketRemoveAction(id))}>x</button>
+        <button className={s.del_btn} onClick={()=>dispatch(basket_remove(id))}>x</button>
     </div>
   )
 }

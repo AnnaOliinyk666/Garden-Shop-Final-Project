@@ -1,5 +1,7 @@
 
-import { categoriesLoadAction } from "../reducer/categoriesReducer";
+// import { categoriesLoadAction } from "../reducer/categoriesReducer";
+
+import { load } from "../slice/categoriesSlice";
 
 const categoryURL = 'http://localhost:3333/categories/all';
 
@@ -9,5 +11,5 @@ const resp = await fetch (categoryURL);
 const data = await resp.json();
 
 
-dispatch(categoriesLoadAction(data))
+dispatch(load(data))
 }
