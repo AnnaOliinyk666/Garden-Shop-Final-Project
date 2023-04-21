@@ -8,9 +8,15 @@ export const categoriesSlice = createSlice({
     reducers: {
        load(state, {payload}){
             state.list = payload;
+       },
+       this_category(state, {payload}){
+        state.list = state.list.find(item => item.id === +payload)
+       },
+       reset_category(state){
+        return state
        }
     }
 })
-export const {load} = categoriesSlice.actions;
+export const { load, this_category, reset_category } = categoriesSlice.actions;
 export default categoriesSlice.reducer;
 

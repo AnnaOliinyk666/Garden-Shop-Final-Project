@@ -1,6 +1,8 @@
 import React from 'react'
 import bush from './bush.png'
 import s from './style.module.css'
+import { Link } from 'react-router-dom'
+import ProductsPage from '../../pages/ProductsPage'
 
 export default function NewSeasonSaleBanner() {
     
@@ -9,7 +11,7 @@ export default function NewSeasonSaleBanner() {
         <div>
             <h1>Sale</h1>
             <h2>New Season</h2>
-            <button>Sale</button>
+            <Link to='/products/sale' element={<ProductsPage/>}>Sale</Link>
         </div>
         <img src={bush} alt="bush" />
     </div>

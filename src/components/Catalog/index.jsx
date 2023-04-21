@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 export default function Catalog() {
     const categories = useSelector(store => store.categories.list)
-    
   return (
     <div>
         <div className={s.block}>
@@ -15,7 +14,8 @@ export default function Catalog() {
         </div>
         <div className={s.wrapper}>
             {
-                categories.map((item) => item.id===5 ? '' : <CategorieItem key={item.id} {...item}/>)
+                
+               categories.map((item) => item.id===5 ? '' : <CategorieItem key={item.id} {...item}/>)
             }
         </div>
         

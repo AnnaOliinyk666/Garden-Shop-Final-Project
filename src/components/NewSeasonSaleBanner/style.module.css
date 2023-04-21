@@ -4,7 +4,7 @@
     align-items: center;
     padding: 1%;
     background-color: #A1E2EB;
-    /* max-height: 600px; */
+    height: 600px;
     align-content: center;
     justify-items: center;
     gap: 48%;
@@ -27,7 +27,7 @@
     line-height: 130%;
     color: aliceblue;
 }
-.wrapper button{
+/* .wrapper button{
     border: none;
     background-color: aliceblue;
     font-family: 'Montserrat';
@@ -37,6 +37,19 @@
     line-height: 130%;
     padding: 25px 50px;
     border-radius: 13px;
+} */
+.wrapper a{
+    border: none;
+    background-color: aliceblue;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+    padding: 25px 50px;
+    border-radius: 13px;
+    text-decoration: none;
+    color: black;
 }
 .wrapper img{
     max-width: 100%;
