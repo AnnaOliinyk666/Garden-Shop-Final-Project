@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductItem from '../../components/ProductItem'
 import s from './style.module.css'
 import { useParams } from 'react-router-dom'
-import {  sortFilter } from '../../store/slice/productsSlice'
+import {  filterByPriceFrom, filterByPriceTo, sortFilter } from '../../store/slice/productsSlice'
 
 
 
@@ -13,24 +13,35 @@ export default function ProductsPage() {
   const [products,setProductsStatus] = useState(productsSel)
   const [categories,setCategoriesStatus] = useState([]);
   const [checkBoxStatus,setcheckBoxStatus] = useState(false)
+ 
   const params = useParams();
+
   useEffect(()=>{
     if (params.id) {
       const prodByCategory = productsSel.filter(item => item.categoryId === +params.id);
       const thisCategory = categoriesSel.find(item => item.id === +params.id)
       setProductsStatus(prodByCategory)
       setCategoriesStatus(thisCategory)
+      if(checkBoxStatus === true){
+        const newProductSale = prodByCategory.filter(item => item.discont_price)
+        setProductsStatus(newProductSale)
+      }
     } else if (params.sale) {
       const prodSale = productsSel.filter(item => item.discont_price)
       setProductsStatus(prodSale)
       setCategoriesStatus([])
-    } else if(products === undefined){
+    } else if (checkBoxStatus === true) {
+      
+      const prodSale = productsSel.filter(item => item.discont_price)
+      setProductsStatus(prodSale)
+      setCategoriesStatus([])
+    }else if(products === undefined){
       return <h4>LOADING ...</h4>
     } else {
       setProductsStatus(productsSel)
       setCategoriesStatus([])
     }
-  }, [params,categoriesSel,productsSel])
+  }, [params,categoriesSel,productsSel,checkBoxStatus])
   
   
  
@@ -70,8 +81,8 @@ export default function ProductsPage() {
       
       <div>
         <label htmlFor="priceValue">Price</label>
-        <input name='priceValue' type="number" placeholder='from'/>
-        <input name='priceValue' type="number" placeholder='to'/>
+        <input onChange={(e)=> dispatch(filterByPriceFrom(+e.target.value))} name='priceValueFrom'  type="number" placeholder='from'/>
+        <input onChange={(e)=> dispatch(filterByPriceTo(+e.target.value))} name='priceValueTo' type="number" placeholder='to'/>
         
         {
           params.sale === undefined
@@ -92,7 +103,10 @@ export default function ProductsPage() {
           {
             products === undefined
             ? <h4>LOADING ...</h4>
-            : products.map(item => <ProductItem key={item.id} {...item}/>)
+            : products
+            .filter(({show_priceFrom}) => show_priceFrom )
+            .filter(({show_priceTo}) => show_priceTo )
+            .map(item => <ProductItem key={item.id} {...item}/>)
           }
       </div>
     </div>

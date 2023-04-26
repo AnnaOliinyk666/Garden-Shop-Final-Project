@@ -13,7 +13,9 @@ export const productsSlice = createSlice({
                 {
                 ...item, 
                 show:true, 
-                newPrice: item.discont_price ? item.discont_price : item.price
+                newPrice: item.discont_price ? item.discont_price : item.price,
+                show_priceTo: true,
+                show_priceFrom: true
                 }
                 ))
         },
@@ -31,9 +33,38 @@ export const productsSlice = createSlice({
         },
         sortFilter(state, { payload }){
             state.list = [...state.list].sort((a,b) => (payload === 1 ? 1 : -1) * (getPrice(a) - getPrice(b)))
+        },
+        filterByPriceFrom(state, {payload}){
+            if (payload !== 0) {
+                state.list = state.list.map(item => ({
+                    ...item,
+                    show_priceFrom: +item.newPrice >= payload 
+                }) );
+            } else {
+                state.list = state.list.map(item => ({
+                    ...item,
+                    show_priceFrom: true
+                }));
+            }
+           
+            
+        },
+        filterByPriceTo(state, {payload}){
+            if (payload !== 0) {
+                state.list = state.list.map(item => ({
+                    ...item,
+                    show_priceTo: +item.newPrice <= payload 
+                }));
+            } else {
+                state.list = state.list.map(item => ({
+                    ...item,
+                    show_priceTo: true
+                }));
+            }
+            
         }
     }
 })
-export const { load, searchFilter, resetFilter, sortFilter } = productsSlice.actions;
+export const { load, searchFilter, resetFilter, sortFilter, filterByPriceFrom, filterByPriceTo } = productsSlice.actions;
 export default productsSlice.reducer;
 
