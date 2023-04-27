@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductItem from '../../components/ProductItem'
 import s from './style.module.css'
 import { useParams } from 'react-router-dom'
-import {  filterByPriceFrom, filterByPriceTo, sortFilter } from '../../store/slice/productsSlice'
+import {  filterByCategory, filterByPriceFrom, filterByPriceTo, resetFilter, showSale, sortFilter } from '../../store/slice/productsSlice'
 
 
 
@@ -15,40 +15,45 @@ export default function ProductsPage() {
   const [checkBoxStatus,setcheckBoxStatus] = useState(false)
  
   const params = useParams();
+  const dispatch = useDispatch();
 
   useEffect(()=>{
     if (params.id) {
+      // dispatch(filterByCategory(params.id))
       const prodByCategory = productsSel.filter(item => item.categoryId === +params.id);
+      
       const thisCategory = categoriesSel.find(item => item.id === +params.id)
       setProductsStatus(prodByCategory)
       setCategoriesStatus(thisCategory)
-      if(checkBoxStatus === true){
-        const newProductSale = prodByCategory.filter(item => item.discont_price)
-        setProductsStatus(newProductSale)
-      }
+      // if(checkBoxStatus === true){
+      //   const newProductSale = prodByCategory.filter(item => item.discont_price)
+      //   setProductsStatus(newProductSale)
+      // }
     } else if (params.sale) {
       const prodSale = productsSel.filter(item => item.discont_price)
-      setProductsStatus(prodSale)
-      setCategoriesStatus([])
-    } else if (checkBoxStatus === true) {
+     setProductsStatus(prodSale)
+      // dispatch(showSale())
+      setCategoriesStatus([]) 
+    // } else if (checkBoxStatus === true) {
       
-      const prodSale = productsSel.filter(item => item.discont_price)
-      setProductsStatus(prodSale)
-      setCategoriesStatus([])
+    //   const prodSale = productsSel.filter(item => item.discont_price)
+    //   setProductsStatus(prodSale)
+    //   setCategoriesStatus([])
     }else if(products === undefined){
       return <h4>LOADING ...</h4>
     } else {
-      setProductsStatus(productsSel)
+     setProductsStatus(productsSel)
+      // dispatch(resetFilter())
       setCategoriesStatus([])
     }
-  }, [params,categoriesSel,productsSel,checkBoxStatus])
+  }, [params,categoriesSel,productsSel, checkBoxStatus])
   
   
  
   
   
 
-  const dispatch = useDispatch();
+  
 
   
 
@@ -57,6 +62,16 @@ export default function ProductsPage() {
   const sortOnChange = (e) => {
     dispatch(sortFilter(+e.target.value))
     setProductsStatus(productsSel)
+  }
+
+  const checkboxOnChange = (checkBoxStatus) => {
+    setcheckBoxStatus(checkBoxStatus);
+    if (checkBoxStatus) {
+      dispatch(showSale());
+    } else {
+      dispatch(resetFilter())
+    }
+   
   }
   
   function title() {
@@ -72,6 +87,8 @@ export default function ProductsPage() {
       return <h2>All products</h2>
     }
   }
+
+  
   
   return (
     <div className={s.wrapper}>
@@ -88,7 +105,7 @@ export default function ProductsPage() {
           params.sale === undefined
           ? <>
           <label htmlFor="discount">Discounted items</label>
-          <input onChange={()=>{setcheckBoxStatus(!checkBoxStatus)}} type="checkbox" checked={checkBoxStatus} name='discount' />
+          <input onChange={()=> checkboxOnChange(!checkBoxStatus)} type="checkbox" checked={checkBoxStatus} name='discount' />
           </>
           :''
         }
@@ -106,6 +123,7 @@ export default function ProductsPage() {
             : products
             .filter(({show_priceFrom}) => show_priceFrom )
             .filter(({show_priceTo}) => show_priceTo )
+            .filter(({show_sale}) => show_sale)
             .map(item => <ProductItem key={item.id} {...item}/>)
           }
       </div>
