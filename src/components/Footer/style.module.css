@@ -44,3 +44,38 @@
     font-size: 68px;
     margin: 25px;
 }
+
+@media (max-width: 767px){
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+    .title{
+        font-size: 20px;
+        line-height: 26px;
+    
+    }
+    .phone{
+        font-size: 35px;
+        line-height: 35px;
+    }
+    .address{
+        font-size: 20px;
+        line-height: 25px;
+    
+    }
+    .hours{
+        font-size: 12px;
+        line-height: 18px;
+    
+    }
+    .days{
+        font-size: 12px;
+    
+    }
+    .icon{
+        font-size: 34px;
+    }
+    .frame{
+        height: 250px;
+    }
+}

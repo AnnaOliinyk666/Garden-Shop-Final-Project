@@ -6,7 +6,7 @@ import CategorieItem from '../../components/CategorieItem'
 export default function CategoriesPage() {
     const categories = useSelector(store => store.categories.list)
   return (
-    <div>
+    <div >
         <h2 className={s.title}>Categories</h2>
         <div className={s.wrapper}>
             {

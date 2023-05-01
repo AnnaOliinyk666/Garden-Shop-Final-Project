@@ -41,3 +41,16 @@
     align-items: center;
     margin-left: 30px;
 }
+@media (max-width: 767px){
+    .wrapper{
+        grid-template-columns: 1fr ;
+        gap: 20px;
+    }
+    .block{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20%;
+        align-items: center;
+        margin-left: 0px;
+    }
+}

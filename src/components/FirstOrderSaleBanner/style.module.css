@@ -57,4 +57,27 @@
     flex-direction: column;
     gap: 30px;
 }
-    
+@media (max-width: 767px){
+    .wrapper img{
+        display: none;
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .wrapper h2 div{
+        font-size: 50px;
+        text-align: center;
+    }
+    .wrapper h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    .form{
+        align-items: center;
+    }
+    .form button{
+        font-size: 18px;
+        width: 223px;
+    }
+}

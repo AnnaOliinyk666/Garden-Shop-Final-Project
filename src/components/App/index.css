@@ -4,3 +4,8 @@
     box-sizing: border-box;
     
 }
+@media (max-width: 767px){
+    *{
+       
+    }
+}

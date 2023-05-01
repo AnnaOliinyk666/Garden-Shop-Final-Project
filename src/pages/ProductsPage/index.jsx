@@ -46,7 +46,7 @@ export default function ProductsPage() {
       // dispatch(resetFilter())
       setCategoriesStatus([])
     }
-  }, [params,categoriesSel,productsSel, checkBoxStatus])
+  }, [params,categoriesSel,productsSel])
   
   
  
