@@ -60,7 +60,7 @@
     .wrapper{
         display: block;
         height: 200px;
-        width: 1fr;
+        max-width: 500px;
         text-align: center;
         
     }
@@ -71,7 +71,8 @@
     }
     .wrapper h2{
        
-        font-size: 30px;
+        font-size: 25px;
+        line-height: 90%;
         
     }
     .wrapper h1{

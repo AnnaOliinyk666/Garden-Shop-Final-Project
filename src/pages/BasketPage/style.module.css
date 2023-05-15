@@ -115,7 +115,7 @@ text-align: left;
     text-align: center;
     color: white;
     border: none;
-    background-color: #339933;
+    background-color: #ddc77d;
     padding: 20px;
     border-radius: 20px;
     cursor: pointer;
@@ -123,5 +123,26 @@ text-align: left;
 }
 .clear_btn:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #4eac4e;
+    background-color: #ddb47d;
+}
+@media (max-width: 767px){
+    .clear_btn{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        width: 70%;
+        margin:  0 auto;
+    
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+    .title h2{
+        font-size: 25px;
+    }
+    .title p{
+        font-size: 12px;
+    }
 }

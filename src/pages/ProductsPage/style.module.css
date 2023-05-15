@@ -10,3 +10,18 @@
     text-align: center;
     justify-content: space-between;
 }
+.filterBar{
+    display: flex;
+    gap: 10px;
+}
+@media (max-width: 767px){
+    .filterBar{
+        /* max-width: 400px; */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .wrap_product{
+        grid-template-columns: 300px;
+    }
+}

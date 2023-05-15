@@ -14,12 +14,14 @@ export default function Header() {
             {/* <button>Catalog</button> */}
         </div>
         <div className={s.navBlock}>
+            
             <nav className={s.nav}>
                 <NavLink className={checkClass} to='/'>Main Page</NavLink>
                 <NavLink className={checkClass} to='/products/all'>All products</NavLink>
                 <NavLink className={checkClass} to='/products/sale'>All sales</NavLink>
             </nav>
             <Link to='/basket'><img src={basketImg} alt="basket" /></Link>
+            <div className={s.mobShow}><i class="las la-ellipsis-v"></i></div>
             
         </div>   
     </div>

@@ -12,7 +12,7 @@ export default function ProductItem({id,price,discont_price,image,title}) {
   return (
     <div className={s.wrapper}>
       <div>
-        <Link to={`/products/${id}`}>
+        <Link to={`/product/${id}`}>
           <img className={s.img} src={`${URL}${image}`} alt="" />
         </Link>
           <button className={s.btn} onClick={() => dispatch(basket_add(id))}><i class="las la-cart-plus"></i></button> 

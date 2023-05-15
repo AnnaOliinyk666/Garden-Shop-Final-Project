@@ -16,49 +16,27 @@ export default function ProductsPage() {
  
   const params = useParams();
   const dispatch = useDispatch();
+  
 
   useEffect(()=>{
     if (params.id) {
-      // dispatch(filterByCategory(params.id))
       const prodByCategory = productsSel.filter(item => item.categoryId === +params.id);
       
       const thisCategory = categoriesSel.find(item => item.id === +params.id)
       setProductsStatus(prodByCategory)
       setCategoriesStatus(thisCategory)
-      // if(checkBoxStatus === true){
-      //   const newProductSale = prodByCategory.filter(item => item.discont_price)
-      //   setProductsStatus(newProductSale)
-      // }
     } else if (params.sale) {
       const prodSale = productsSel.filter(item => item.discont_price)
      setProductsStatus(prodSale)
-      // dispatch(showSale())
       setCategoriesStatus([]) 
-    // } else if (checkBoxStatus === true) {
-      
-    //   const prodSale = productsSel.filter(item => item.discont_price)
-    //   setProductsStatus(prodSale)
-    //   setCategoriesStatus([])
     }else if(products === undefined){
       return <h4>LOADING ...</h4>
     } else {
      setProductsStatus(productsSel)
-      // dispatch(resetFilter())
       setCategoriesStatus([])
     }
   }, [params,categoriesSel,productsSel])
   
-  
- 
-  
-  
-
-  
-
-  
-
-  
-
   const sortOnChange = (e) => {
     dispatch(sortFilter(+e.target.value))
     setProductsStatus(productsSel)
@@ -88,33 +66,57 @@ export default function ProductsPage() {
     }
   }
 
-  
-  
+
+
+  if (params.sale) {
+    if (params.sale !== 'sale') {
+      return window.location.replace(
+        "http://localhost:3000/error"
+      );
+    }
+  } else if (params.id){
+    if (params.id > categoriesSel.length || params.id < 1) {
+      return window.location.replace(
+        "http://localhost:3000/error"
+      );
+    }
+  } else if (params.all) {
+    if (params.all !== 'all') {
+      return window.location.replace(
+        "http://localhost:3000/error"
+      );
+    }
+  }
   return (
     <div className={s.wrapper}>
       {
         title()
       }
       
-      <div>
-        <label htmlFor="priceValue">Price</label>
-        <input onChange={(e)=> dispatch(filterByPriceFrom(+e.target.value))} name='priceValueFrom'  type="number" placeholder='from'/>
-        <input onChange={(e)=> dispatch(filterByPriceTo(+e.target.value))} name='priceValueTo' type="number" placeholder='to'/>
+      <div className={s.filterBar}>
+        <div>
+          <label htmlFor="priceValue">Price</label>
+          <input onChange={(e)=> dispatch(filterByPriceFrom(+e.target.value))} name='priceValueFrom'  type="number" placeholder='from'/>
+          <input onChange={(e)=> dispatch(filterByPriceTo(+e.target.value))} name='priceValueTo' type="number" placeholder='to'/>
+        </div>
+        
         
         {
           params.sale === undefined
-          ? <>
+          ? <div>
           <label htmlFor="discount">Discounted items</label>
           <input onChange={()=> checkboxOnChange(!checkBoxStatus)} type="checkbox" checked={checkBoxStatus} name='discount' />
-          </>
+          </div>
           :''
         }
+        <div>
+          <label htmlFor="price">Sorted</label>
+          <select onChange={sortOnChange} name="price">
+            <option value="1">low</option>
+            <option value="2">high</option>
+          </select>
+        </div>
         
-        <label htmlFor="price">Sorted</label>
-        <select onChange={sortOnChange} name="price">
-          <option value="1">low</option>
-          <option value="2">high</option>
-        </select>
       </div>
       <div className={s.wrap_product}>
           {

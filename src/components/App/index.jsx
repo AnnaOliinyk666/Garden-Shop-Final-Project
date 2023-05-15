@@ -29,9 +29,10 @@ function App() {
         <Route path="/products/categories/:id" element={<ProductsPage/>}/>
         <Route path="/products/:sale" element={<ProductsPage/>}/>
         <Route path="/categories" element={<CategoriesPage/>}/>
-        <Route path="/products/:id" element={<SinglPoductPage/>}/>
+        <Route path="/product/:id" element={<SinglPoductPage/>}/>
         <Route path="/basket" element={<BasketPage/>}/>
         <Route path="/*" element={<ErrorPage/>}/>
+        <Route path="/error" element={<ErrorPage/>}/>
       </Routes>
       <Footer/>
     </div> 

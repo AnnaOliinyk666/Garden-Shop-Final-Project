@@ -54,11 +54,19 @@
 .nav .active{
     color: #339933;
 }
-
+.mobShow{
+    display: none;
+}
 @media (max-width: 767px){
+    .mobShow{
+        display: block;
+        font-size: 28px;
+        margin-left: 5px;
+    }
     .wrapper{
-        grid-template-columns: 1fr 2fr;
-        gap: 5%;
+        grid-template-columns: 4fr 1fr;
+        min-width: 340px;
+        
     }
     .logoBlock{
         display: flex;
@@ -67,10 +75,16 @@
     }
     .navBlock{
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        min-width: none;
+        width: 30px;
     }
     .nav{
         display: none;
     }
+    .category{
+        padding: 0 7px;
+    }
+    
     
 }

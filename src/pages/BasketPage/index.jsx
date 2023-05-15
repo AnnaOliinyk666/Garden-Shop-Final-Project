@@ -30,6 +30,27 @@ export default function BasketPage() {
     discont_price !== null
     ? acc + discont_price*count
     : acc + price*count,0)).toFixed(2)
+
+    // const PostSaleURL = 'http://localhost:3333/sale/send';
+    // const PostCall = async (e) => {
+    //  e.preventDefault();
+    //   try {
+    //       const response = await fetch(PostSaleURL, {
+    //        method: 'POST',
+    //        body: JSON.stringify({
+    //            id: Date.now(),
+    //            phone: +e.target.phone.value
+    //           })
+    //        });
+    //        const data = await response.json();
+    //        console.log(data);
+    //      } catch(error) {
+    //         console.log(error)
+    //        } 
+    //     e.target.phone.value='';
+    //   }
+  
+
   return (
     <div>
       <div className={s.title}>

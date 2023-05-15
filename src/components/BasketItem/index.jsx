@@ -3,13 +3,17 @@ import { useDispatch } from 'react-redux'
 // import { basketDecrementAction, basketIncrementAction, basketRemoveAction } from '../../store/reducer/basketReducer';
 import s from './style.module.css'
 import { basket_decrement, basket_increment, basket_remove } from '../../store/slice/basketSlice';
+import { Link } from 'react-router-dom';
 
 export default function BasketItem({id,title, price, discont_price,image,count}) {
   const dispatch = useDispatch();
   const URL = 'http://localhost:3333/'
   return (
     <div className={s.wrapper}>
-        <img src={`${URL}${image}`} alt={title} />
+      <Link to={`/product/${id}`}>
+      <img src={`${URL}${image}`} alt={title} />
+      </Link>
+        
         <div className={s.name_count_block}>
             <p className={s.title}>{title}</p>
             <div className={s.btnDecr}>
