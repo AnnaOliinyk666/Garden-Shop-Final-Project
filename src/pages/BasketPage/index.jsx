@@ -31,24 +31,24 @@ export default function BasketPage() {
     ? acc + discont_price*count
     : acc + price*count,0)).toFixed(2)
 
-    // const PostSaleURL = 'http://localhost:3333/sale/send';
-    // const PostCall = async (e) => {
-    //  e.preventDefault();
-    //   try {
-    //       const response = await fetch(PostSaleURL, {
-    //        method: 'POST',
-    //        body: JSON.stringify({
-    //            id: Date.now(),
-    //            phone: +e.target.phone.value
-    //           })
-    //        });
-    //        const data = await response.json();
-    //        console.log(data);
-    //      } catch(error) {
-    //         console.log(error)
-    //        } 
-    //     e.target.phone.value='';
-    //   }
+    const PostSendURL = 'http://localhost:3333/order/send';
+    const PostCall = async (e) => {
+     e.preventDefault();
+      try {
+          const response = await fetch(PostSendURL, {
+           method: 'POST',
+           body: JSON.stringify({basket, id: Date.now(), phone: e.target.phone.value})
+           });
+           const data = await response.json();
+           console.log(data);
+           if (data.status === 'OK') {
+            dispatch(basket_clear())
+           }
+         } catch(error) {
+            console.log(error)
+           } 
+           e.target.phone.value = '';
+      }
   
 
   return (
@@ -79,9 +79,9 @@ export default function BasketPage() {
             <p>Total:</p>
             <div>{totalPrice} <span>$</span></div>
           </div>
-          <form>
-            <input type="text" placeholder='Phone number' />
-            <button>Order</button>
+          <form onSubmit={PostCall}>
+            <input type="text" placeholder='Phone number' name='phone'/>
+            <button >Order</button>
           </form>
           
         </div>

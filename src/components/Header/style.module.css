@@ -57,6 +57,9 @@
 .mobShow{
     display: none;
 }
+.navShow{
+    display: none;
+}
 @media (max-width: 767px){
     .mobShow{
         display: block;
@@ -66,6 +69,7 @@
     .wrapper{
         grid-template-columns: 4fr 1fr;
         min-width: 340px;
+        margin-bottom: 30px;
         
     }
     .logoBlock{
@@ -85,6 +89,22 @@
     .category{
         padding: 0 7px;
     }
-    
-    
+    .navShow{
+        display:flex;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        min-width: 390px;
+        margin: 10px 5px;
+        padding: 5px;
+        justify-content: space-between;
+        background-color: transparent;
+    }
+    .navShow a{
+        color: black;
+        text-decoration: none;
+    }
+    .navShow .active{
+        color: #339933;
+    }
 }
