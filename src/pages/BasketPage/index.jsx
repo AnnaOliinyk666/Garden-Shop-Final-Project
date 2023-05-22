@@ -37,7 +37,7 @@ export default function BasketPage() {
       try {
           const response = await fetch(PostSendURL, {
            method: 'POST',
-           body: JSON.stringify({basket, id: Date.now(), phone: e.target.phone.value})
+           body: JSON.stringify({basket:data, id: Date.now(), phone: e.target.phone.value})
            });
            const data = await response.json();
            console.log(data);
