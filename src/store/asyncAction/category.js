@@ -1,5 +1,4 @@
 
-// import { categoriesLoadAction } from "../reducer/categoriesReducer";
 
 import { load } from "../slice/categoriesSlice";
 

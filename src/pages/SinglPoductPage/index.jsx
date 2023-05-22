@@ -20,8 +20,7 @@ export default function SinglPoductPage() {
     
     
   
-  // console.log(+id > productsAll || +id < 1)
-  // const precent = (100-product.discont_price / product.price * 100).toFixed(2);
+ 
   const URL = 'http://localhost:3333/'
   return (
     <>

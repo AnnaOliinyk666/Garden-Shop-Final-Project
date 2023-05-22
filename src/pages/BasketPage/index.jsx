@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BasketItem from '../../components/BasketItem';
-// import { basketClearAction } from '../../store/reducer/basketReducer';
 import s from './style.module.css'
 import { Link } from 'react-router-dom';
 import { basket_clear } from '../../store/slice/basketSlice';

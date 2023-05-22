@@ -14,7 +14,6 @@ export default function Header() {
         <div className={s.logoBlock}>
             <img src={logo} alt="logo" />
             <Link className={s.category} to='/categories'>Catalog</Link>
-            {/* <button>Catalog</button> */}
         </div>
         <div className={s.navBlock}>
             

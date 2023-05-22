@@ -1,4 +1,4 @@
-// import { productsLoadAction } from "../reducer/productsReducer";
+
 import { load } from "../slice/productsSlice";
 
 const productsURL = 'http://localhost:3333/products/all';
