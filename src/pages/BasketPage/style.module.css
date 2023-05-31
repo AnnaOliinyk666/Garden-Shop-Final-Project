@@ -145,4 +145,10 @@ text-align: left;
     .title p{
         font-size: 12px;
     }
+    .order_block{
+       height: 330px;
+    }
+    .order_block h4{
+        margin: 10px 0;
+    }
 }

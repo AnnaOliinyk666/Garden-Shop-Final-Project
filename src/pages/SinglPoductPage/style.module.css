@@ -99,3 +99,22 @@
     
     cursor: pointer;
 }
+@media (max-width: 767px){
+    .wrapper{
+        grid-template-columns: 1fr;
+        margin: 15px;
+        gap: 20px;
+    }
+    .wrapper img{
+        width: 344px;
+        height: 344px;
+        object-fit: cover;
+    }
+    .title{
+        font-size: 25px;
+    }
+    .price{
+        font-size: 40px;
+    }
+    
+}

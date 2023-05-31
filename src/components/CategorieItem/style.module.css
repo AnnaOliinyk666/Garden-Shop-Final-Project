@@ -6,14 +6,30 @@
 .wrapper a{
 color: black;
 text-decoration: none;
+
+}
+.wrapper{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.wrapper:hover{
+    box-shadow: rgba(139, 139, 139, 0.16) 0px 1px 4px;
+}
+.wrapper{
+    width: 320px;
+    
 }
 @media (max-width: 767px){
     .img{
-        width: 350px;
-        height: 370px;
+        width: 300px;
+        height: 300px;
         object-fit: cover;
     }
     .wrapper p{
         font-size: 25px;
+        margin: 10px;
+    }
+    .wrapper{
+        margin-bottom: 0;
     }
 }

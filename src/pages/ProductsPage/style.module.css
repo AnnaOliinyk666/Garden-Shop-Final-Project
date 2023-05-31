@@ -12,7 +12,23 @@
 }
 .filterBar{
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin: 0 40px;
+}
+.filterBar input[type="checkbox"]:checked {
+    accent-color: #339933;
+    
+}
+.filterPrice{
+    display: flex;
+    gap: 5px;
+}
+.filterSorted{
+    display: flex;
+    gap: 5px;
+}
+.wrapper h2{
+    margin: 20px 40px;
 }
 @media (max-width: 767px){
     .filterBar{

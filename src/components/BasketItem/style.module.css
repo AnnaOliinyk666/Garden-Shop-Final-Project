@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
     padding: 20px;
 }
 .wrapper img{
@@ -72,6 +73,8 @@ line-height: 23px;
 letter-spacing: 0.03em;
 text-align: left;
 color: #3A3A3A;
+width: 400px;
+
 }
 @media (max-width: 767px){
     .wrapper img{
@@ -85,10 +88,11 @@ color: #3A3A3A;
         padding: 5px;
         gap: 10px;
     }
+    
     .btnDecr{
         border-radius: 6px;
-        width: 80px;
-        height: 18px;
+        width: 90px;
+        height: 25px;
         border: 1px solid black;
         
     }
@@ -119,9 +123,14 @@ color: #3A3A3A;
         font-size: 16px;
         bottom: 50px;
     }
-    .title{
-    font-size: 15px;
+    .title {
+    font-size: 18px;
     font-weight: 400;
     line-height: 15px;
+    max-width: 150px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
     }
+    
 }

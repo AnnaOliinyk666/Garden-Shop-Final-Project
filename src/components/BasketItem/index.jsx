@@ -14,14 +14,14 @@ export default function BasketItem({id,title, price, discont_price,image,count})
       <img src={`${URL}${image}`} alt={title} />
       </Link>
         
-        <div className={s.name_count_block}>
-            <p className={s.title}>{title}</p>
-            <div className={s.btnDecr}>
-                <button onClick={()=>dispatch(basket_decrement(id))}>-</button>
-                <p>{count}</p>
-                <button onClick={()=>dispatch(basket_increment(id))}>+</button>
-            </div>
-        </div>
+      <div className={s.name_count_block}>
+          <p className={s.title}>{title}</p>
+          <div className={s.btnDecr}>
+              <button onClick={()=>dispatch(basket_decrement(id))}>-</button>
+              <p>{count}</p>
+              <button onClick={()=>dispatch(basket_increment(id))}>+</button>
+          </div>
+      </div>
         {
           discont_price != null
           ?<><p className={s.price}>{discont_price}<span>$</span></p>

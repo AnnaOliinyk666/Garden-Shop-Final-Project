@@ -7,7 +7,8 @@
     height: 600px;
     align-content: center;
     justify-items: center;
-    gap: 48%;
+    justify-content: space-between;
+    gap: 20%;
     min-width: max-content;
     
 }
@@ -15,7 +16,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 80px;
+    font-size: 90px;
     line-height: 130%;
     color: aliceblue;
 }
@@ -23,7 +24,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 63px;
+    font-size: 73px;
     line-height: 130%;
     color: aliceblue;
 }
@@ -55,6 +56,9 @@
     max-width: 100%;
     object-fit: contain;
     
+}
+.wrapper a:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media (max-width: 767px){
     .wrapper{

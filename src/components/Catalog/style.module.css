@@ -2,7 +2,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 32px;
-    margin-top: 20px;
+    margin: 20px;
     font-size: 18px;
     font-weight: 600;
     line-height: 23px;
@@ -33,6 +33,11 @@
     text-decoration: none;
     
 
+}
+.block a:hover{
+    background-color: #339933;
+    border: 2px solid  #fcfdfc;
+    color: #fcfbfb;
 }
 .block{
     display: grid;
