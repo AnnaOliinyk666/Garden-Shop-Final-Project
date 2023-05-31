@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { redirect, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import s from './style.module.css'
 import { basket_add } from '../../store/slice/basketSlice'
 

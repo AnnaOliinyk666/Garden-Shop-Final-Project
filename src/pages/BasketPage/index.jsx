@@ -38,9 +38,9 @@ export default function BasketPage() {
            method: 'POST',
            body: JSON.stringify({basket:data, id: Date.now(), phone: e.target.phone.value})
            });
-           const data = await response.json();
-           console.log(data);
-           if (data.status === 'OK') {
+           const dataR = await response.json();
+           console.log(dataR);
+           if (dataR.status === 'OK') {
             dispatch(basket_clear())
            }
          } catch(error) {
