@@ -24,4 +24,12 @@
     .wrap_product{
         grid-template-columns: 300px;
     }
+    .filterPrice{
+        display: flex;
+        justify-content: space-between;
+        width: 270px;
+    }
+    .filterPrice input{
+        width: 100px;
+    }
 }

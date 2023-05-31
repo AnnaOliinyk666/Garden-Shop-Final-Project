@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductItem from '../../components/ProductItem'
 import s from './style.module.css'
 import { useParams } from 'react-router-dom'
-import {  filterByCategory, filterByPriceFrom, filterByPriceTo, resetFilter, showSale, sortFilter } from '../../store/slice/productsSlice'
+import {  filterByPriceFrom, filterByPriceTo, resetFilter, showSale, sortFilter } from '../../store/slice/productsSlice'
 
 
 
@@ -94,7 +94,7 @@ export default function ProductsPage() {
       }
       
       <div className={s.filterBar}>
-        <div>
+        <div className={s.filterPrice}>
           <label htmlFor="priceValue">Price</label>
           <input onChange={(e)=> dispatch(filterByPriceFrom(+e.target.value))} name='priceValueFrom'  type="number" placeholder='from'/>
           <input onChange={(e)=> dispatch(filterByPriceTo(+e.target.value))} name='priceValueTo' type="number" placeholder='to'/>

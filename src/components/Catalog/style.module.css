@@ -53,4 +53,7 @@
         align-items: center;
         margin-left: 0px;
     }
+    .block a{
+        width: 100px;
+    }
 }

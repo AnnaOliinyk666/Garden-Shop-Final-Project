@@ -9,8 +9,8 @@ text-decoration: none;
 }
 @media (max-width: 767px){
     .img{
-        width: 400px;
-        height: 410px;
+        width: 350px;
+        height: 370px;
         object-fit: cover;
     }
     .wrapper p{
